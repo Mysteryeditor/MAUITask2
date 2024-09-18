@@ -59,8 +59,6 @@ namespace MauiAppTask2CRUD.ViewModels
                 People.Add(person);
             }
         }
-
-        // Add a new person or update an existing one
         async Task AddPerson()
         {
             if (!string.IsNullOrEmpty(Name) && !string.IsNullOrEmpty(Age) && int.TryParse(Age, out int age))
@@ -79,7 +77,7 @@ namespace MauiAppTask2CRUD.ViewModels
                         People[index] = person;
                     }
                 }
-                else // Add new person
+                else 
                 {
                     await App.Database.SavePersonAsync(person);
                     People.Add(person); // Directly add to ObservableCollection
@@ -91,8 +89,6 @@ namespace MauiAppTask2CRUD.ViewModels
                 SelectedPerson = null; // Reset selection after save
             }
         }
-
-        // Delete the selected person
         async Task DeletePerson()
         {
             if (SelectedPerson != null)

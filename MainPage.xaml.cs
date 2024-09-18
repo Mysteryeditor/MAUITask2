@@ -7,7 +7,7 @@ namespace MauiAppTask2CRUD
         public MainPage()
         {
             InitializeComponent();
-            BindingContext = new MainViewModel();  // Set ViewModel as the BindingContext
+            BindingContext = new MainViewModel();
         }
     }
 
